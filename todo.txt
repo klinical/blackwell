@@ -1,0 +1,46 @@
+Programming:
+	Inventory system
+	Save system
+	Stats
+	Quest system
+	HUD
+	Classes
+	Abilities
+	Combat
+	Mobs / mob spawn areas
+	Dungeons
+
+Modeling:
+	Terrain assets like trees rocks flowers etc
+	Generic buildings
+	Swords
+	Shields
+	Axes
+	Daggers
+	Spears
+	Staffs
+	Bows
+	Mayne some guns
+	Armor items
+	Mobs/enemies
+	PC/NonPC characters to accept armor, customize certain features
+	Subaru Impreza
+
+Artwork:
+	Terrain textures
+	Inventory item sprites
+	Armor/weapon textures
+	Mob/Character textures
+	Skybox
+	Menu item textures
+	Logo
+	Title Screen stuff
+
+Sound:
+	Theme music
+	Melee hit sounds
+	Magic hit sounds
+	Ranged hit sounds
+	Spell cast sounds
+	Mob sounds
+	Player sounds (hurt, eating, etc)
