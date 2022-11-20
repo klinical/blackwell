@@ -28,7 +28,6 @@ func _physics_process(delta) -> void:
 	state.physics_update(delta)
 	
 func transition_to(target_state: String, msg: Dictionary = {}) -> void:
-	print(str("switching from ", state, " to ", target_state))
 	if not has_node(target_state):
 		return
 	

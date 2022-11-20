@@ -1,7 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cweatkl00j6d7"]
+[gd_scene load_steps=13 format=3 uid="uid://cweatkl00j6d7"]
 
 [ext_resource type="Script" path="res://scripts/player/Player.gd" id="1_kw313"]
-[ext_resource type="PackedScene" uid="uid://dxk7ycrxagvyy" path="res://models/player.glb" id="2_angv0"]
 [ext_resource type="Script" path="res://scripts/state_machine.gd" id="3_b1ldx"]
 [ext_resource type="Script" path="res://scripts/player/CameraDock.gd" id="3_wnu8i"]
 [ext_resource type="Script" path="res://scripts/player/activity/Grounded.gd" id="4_kmn10"]
@@ -9,9 +8,9 @@
 [ext_resource type="Script" path="res://scripts/player/Frozen.gd" id="6_uimil"]
 [ext_resource type="Script" path="res://scripts/player/combat/Active.gd" id="7_07ba3"]
 [ext_resource type="Script" path="res://scripts/player/combat/Inactive.gd" id="8_tdh4r"]
-[ext_resource type="Script" path="res://scripts/player/MenuStateMachine.gd" id="8_ven3w"]
-[ext_resource type="Script" path="res://scripts/player/menu/Active.gd" id="9_lobut"]
-[ext_resource type="Script" path="res://scripts/player/menu/Inactive.gd" id="10_gxxm1"]
+[ext_resource type="PackedScene" uid="uid://dm7jiq5fyinx0" path="res://models/player.glb" id="11_q1k7c"]
+[ext_resource type="Script" path="res://scripts/equipment/equipment_set.gd" id="13_xvo3v"]
+[ext_resource type="PackedScene" uid="uid://6uj6gx03hfsx" path="res://menu/character_pane.tscn" id="14_8mi82"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_14sy2"]
 
@@ -19,8 +18,8 @@
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
 script = ExtResource("1_kw313")
 
-[node name="model" parent="." instance=ExtResource("2_angv0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0.5)
+[node name="CharacterPane" parent="." instance=ExtResource("14_8mi82")]
+visible = false
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 transform = Transform3D(0.8, 0, 0, 0, 0.8, 0, 0, 0, 0.8, 0, 0.403495, 0)
@@ -61,12 +60,7 @@ script = ExtResource("7_07ba3")
 [node name="Inactive" type="Node" parent="CombatStateMachine"]
 script = ExtResource("8_tdh4r")
 
-[node name="MenuStateMachine" type="Node" parent="."]
-script = ExtResource("8_ven3w")
-initial_state = NodePath("Inactive")
+[node name="EquipmentSet" type="Node" parent="."]
+script = ExtResource("13_xvo3v")
 
-[node name="Active" type="Node" parent="MenuStateMachine"]
-script = ExtResource("9_lobut")
-
-[node name="Inactive" type="Node" parent="MenuStateMachine"]
-script = ExtResource("10_gxxm1")
+[node name="player" parent="." instance=ExtResource("11_q1k7c")]

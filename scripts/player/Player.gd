@@ -26,6 +26,8 @@ func _ready() -> void:
 
 
 func _process(delta) -> void:
+	if delta < 0:
+		print("WARNING: DELTA IS A NEGATIVE VALUE ON PLAYER")
 	if Input.is_action_just_released("scroll_down"):
 		$GimbalY.increment_zoom(1)
 	if Input.is_action_just_released("scroll_up"):
@@ -34,7 +36,7 @@ func _process(delta) -> void:
 
 func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("toggle_inventory"):
-		menu_state_machine.toggle("inventory")
+		$CharacterPane.visible = !$CharacterPane.visible
 	
 	if activity_state_machine.state.name == "Frozen":
 		# continue with whatever velocity there still is
@@ -59,6 +61,12 @@ func _physics_process(delta: float) -> void:
 	# perform computed movement
 	move_and_slide()
 
+
+func equip(item, slot: String) -> void:
+	match (slot):
+		"weapon":
+			$CharacterPane/VBoxContainer3/PrimarySlot.texture = item.sprite
+	pass
 
 func camera_adjust(mouse_pos: Vector2, delta: float) -> void:
 	# last_mouse is a zero vector if the player has not moved their camera yet

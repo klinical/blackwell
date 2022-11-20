@@ -1,0 +1,23 @@
+[gd_resource type="Environment" load_steps=4 format=3 uid="uid://b1r4smtw0fqfs"]
+
+[ext_resource type="Texture2D" uid="uid://ogbsj16tk5q3" path="res://skybox/bluecloud_panorama.png" id="1_f1cy1"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_2u647"]
+panorama = ExtResource("1_f1cy1")
+
+[sub_resource type="Sky" id="Sky_yrujg"]
+sky_material = SubResource("PanoramaSkyMaterial_2u647")
+
+[resource]
+background_mode = 2
+background_energy_multiplier = 0.62
+sky = SubResource("Sky_yrujg")
+ambient_light_color = Color(0.501961, 0.501961, 0.501961, 1)
+ambient_light_sky_contribution = 0.0
+ambient_light_energy = 3.0
+tonemap_mode = 2
+tonemap_exposure = 2.56
+tonemap_white = 12.51
+sdfgi_enabled = true
+sdfgi_use_occlusion = true
+fog_light_energy = 0.0

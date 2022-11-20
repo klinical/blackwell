@@ -1,0 +1,59 @@
+{
+    "armor": {
+        "helmet": {
+
+        },
+        "shoulder": {
+
+        },
+        "chest": {
+            
+        },
+        "legs": {
+
+        },
+        "feet": {
+
+        }
+    },
+
+    "weapons": {
+        "primary": {
+            "one-handed": {
+                "swords": {
+                    "iron_sword": {
+                        "display": "Iron Sword",
+                        "rarity": "common",
+                        "model": "iron_sword",
+                        "attack_speed": 1.6,
+                        "damage": 10,
+                        "attributes": {
+                            "stamina": 1,
+                            "strength": 2
+                        }
+                    }
+                }
+            },
+
+            "two-handed": {
+                "axes": {
+                    "iron_axe": {
+                        "display": "Iron Axe",
+                        "rarity": "common",
+                        "model": "iron_axe",
+                        "attack_speed": 1.2,
+                        "damage": 21,
+                        "attributes": {
+                            "stamina": 1,
+                            "strength": 1
+                        }
+                    }
+                }
+            }
+        },
+
+        "secondary": {
+
+        }
+    }
+}
